@@ -21,8 +21,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install selenium
         pip install Pillow
-        pip install tesserocr
         pip install tesseract
+        pip install tesserocr
         pip install unittest
         pip install ddddocr
 
