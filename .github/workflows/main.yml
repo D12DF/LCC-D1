@@ -21,8 +21,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install selenium
         pip install Pillow
-        pip install email.header
-        pip install email.mime.text
         pip install tesserocr
         pip install tesseract
         pip install unittest
