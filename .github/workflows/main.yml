@@ -22,15 +22,13 @@ jobs:
         pip install selenium
         pip install Pillow
         pip install ddddocr
-
-    - name: SignIn
-      run: |
-        python ./main.py
     - name: Working
       run: |
         sudo cp -p ./chrome/chromedriver /usr/bin/
         chmod -R 777 /usr/bin/chromedriver
-        python ./Spider/test.py
+    - name: SignIn
+      run: |
+        python ./main.py
 
       env:
         STUID: ${{ secrets.STUID }}
