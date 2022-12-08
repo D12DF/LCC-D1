@@ -21,9 +21,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install selenium
         pip install Pillow
-        pip install tesseract
-        pip install tesserocr --use-pep517
-        pip install unittest
         pip install ddddocr
 
     - name: SignIn
