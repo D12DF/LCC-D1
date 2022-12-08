@@ -1,13 +1,10 @@
 from selenium import webdriver
 from PIL import Image
-from email.mime.text import MIMEText
-from email.header import Header
-import time, smtplib, tesserocr, selenium
-import os, sys
+import time, smtplib, selenium
+#import os, sys
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 import ddddocr
-import unittest
 from selenium.webdriver.support.ui import Select
 la = ['2616220080','2616220061']
 lc = ['Fjsy@150232','Fjsy@202016']
@@ -35,10 +32,10 @@ for i in range(0,2):
                 stu_password = lc[i]
                 password = driver.find_element(By.XPATH, '//*[@id="Name"]')
                 password.send_keys(stu_password)
-                driver.save_screenshot("D:\d12\pythonProject1/2.png")#获取页面截图
-                img = Image.open('D:\d12\pythonProject1/2.png') ## 打开2.png文件，并赋值给img
+                driver.save_screenshot("2.png")#获取页面截图
+                img = Image.open('2.png') ## 打开2.png文件，并赋值给img
                 region = img.crop((1091,343,1173,366))#对获取的截图进行裁剪
-                region.save('D:\d12\pythonProject1/3.png')#保存裁剪后的图片
+                region.save('3.png')#保存裁剪后的图片
                 ocr = ddddocr.DdddOcr()#导入验证码识别
                 with open("3.png", "rb") as f:
                     img_bytes = f.read()
@@ -57,7 +54,7 @@ for i in range(0,2):
             try:
                 while True:
                     try:
-                        las = driver.find_element(By.XPATH,'//*[@id="platfrom1"]/a/img')
+                        las = driver.find_element(By.XPATH,'//*[@id="platfrom1"]')
                         break
                     except:
                         namesss = driver.find_element(By.XPATH, '//*[@id="codeInput"]')
@@ -68,11 +65,10 @@ for i in range(0,2):
                         js1 = "window.scrollTo(0, document.body.scrollHeight)"
                         driver.execute_script(js1)
                         time.sleep(1)
-                        driver.save_screenshot("D:\d12\pythonProject1/2.png")#获取页面截图
-                        img = Image.open('D:\d12\pythonProject1/2.png') ## 打开2.png文件，并赋值给img
+                        driver.save_screenshot("2.png")#获取页面截图
+                        img = Image.open('2.png') ## 打开2.png文件，并赋值给img
                         region = img.crop((1190,671,1296,711))#对获取的截图进行裁剪
-                        region.save('D:\d12\pythonProject1/3.png')#保存裁剪后的图片
-
+                        region.save('3.png')#保存裁剪后的图片
                         ocr = ddddocr.DdddOcr()#导入验证码识别
                         with open("3.png", "rb") as f:
                             img_bytes = f.read()
@@ -127,6 +123,12 @@ for i in range(0,2):
                 driver.find_element(By.XPATH, '// *[ @ id = "layui-m-layer0"] / div[2] / div / div / div[2] / span').click()
                 break
         driver.quit()
+
+
+
+
+
+
 
 
 
