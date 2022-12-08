@@ -30,6 +30,9 @@ jobs:
          pip install selenium
          pip install Pillow
          pip install ddddocr
+         
+      - name: Prepare chromedriver
+        uses: nanasess/setup-chromedriver@v1
 
       - name: Install ChromeDriver
         run: |
