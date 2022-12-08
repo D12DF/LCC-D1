@@ -42,6 +42,8 @@ jobs:
             && sudo mv chromedriver /usr/local/bin/chromedriver \
             && sudo chmod +x /usr/local/bin/chromedriver \
             && chromedriver --version
+      - name: Install software
+        run: sudo apt-get install -y chromium-browser
 
       - name: 'Working 163 MV Crawler'
         env:
